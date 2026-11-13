@@ -7,8 +7,9 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000/api/login';
-  private registroUrl = 'http://localhost:3000/api/registro';
+  private baseUrl = 'https://centro-global-camiones.onrender.com/api';
+  private apiUrl = `${this.baseUrl}/login`;
+  private registroUrl = `${this.baseUrl}/registro`;
 
   // BehaviorSubject usa ahora el método seguro con sessionStorage
   private currentUserSubject = new BehaviorSubject<any>(this.obtenerUsuarioDeStorage());
