@@ -1,0 +1,95 @@
+.home-hero {
+    height: 100vh;
+
+    background-image:
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url('../../../recursos/ImagenPrincipal.png');
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.boton-posicion-mockup {
+    position: absolute;
+    bottom: 60px;
+    right: 80px;
+}
+
+.btn-mockup-final {
+    background-color: #4a4a4a;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+
+    padding: 12px 30px;
+
+    font-size: 1.1rem;
+    font-weight: 500;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    border-radius: 25px;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.btn-mockup-final:hover {
+    background-color: #666666;
+    transform: scale(1.02);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+
+    .home-hero {
+        height: 70vh;
+    }
+
+    .boton-posicion-mockup {
+        right: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .home-hero {
+        height: 60vh;
+    }
+
+    .display-1 {
+        font-size: 2.5rem !important;
+    }
+
+    .boton-posicion-mockup {
+        position: relative;
+
+        bottom: auto;
+        right: auto;
+
+        margin-top: 20px;
+
+        display: block;
+        width: 100%;
+    }
+
+    .btn-mockup-final {
+        width: 80%;
+
+        padding: 10px 20px;
+
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,31 @@
+<main class="container my-5">
+
+  <header class="row mb-5">
+    <div class="col-12 text-center">
+      <h2 class="text-danger fw-bold display-4">CATÁLOGO</h2>
+    </div>
+  </header>
+
+@for (categoria of catalogo; track categoria.titulo) {
+    <section class="mb-5">
+
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <h3 class="text-danger fw-bold border-bottom pb-2 text-uppercase">
+            {{ categoria.titulo }}
+          </h3>
+        </div>
+      </div>
+
+      <div class="row">
+        @for (camion of categoria.listado; track camion.nombre) {
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <app-tarjeta-camion [camion]="camion"></app-tarjeta-camion>
+          </div>
+        }
+      </div>
+
+    </section>
+  }
+
+</main>

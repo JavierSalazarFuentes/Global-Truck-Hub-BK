@@ -1,0 +1,16 @@
+.custom-nav-link{
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover */
+.custom-nav-link:hover{
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+/* Botón activo */
+.custom-nav-link.active{
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #460101 !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

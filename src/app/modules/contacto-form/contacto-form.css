@@ -1,0 +1,37 @@
+.form-contacto{
+    background-color: rgba(255,255,255,0.05);
+}
+
+.custom-input {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 0;
+    padding: 12px;
+}
+
+.custom-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.custom-input:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: #b30000;
+    box-shadow: none;
+}
+
+.btn-enviar-contacto {
+    background-color: #000000;
+    color: white;
+    border: 1px solid white;
+    padding: 15px;
+    border-radius: 25px;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.btn-enviar-contacto:hover {
+    background-color: #b30000;
+    border-color: #b30000;
+}

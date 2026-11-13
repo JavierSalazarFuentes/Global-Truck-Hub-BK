@@ -1,0 +1,40 @@
+.footer-principal {
+    background: linear-gradient(to right, #000000, #0a0000);
+    border-top: 3px solid #b30000;
+}
+
+.nombres-disenadores li {
+    color: #e60000; 
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.1;
+}
+
+.politicas-lista li a {
+    color: #b30000;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.politicas-lista li a:hover {
+    color: white;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #222;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.social-icon:hover {
+    background-color: #b30000;
+}

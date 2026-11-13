@@ -1,0 +1,58 @@
+<main class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="row w-100 justify-content-center">
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card shadow card-roja p-4">
+        <div class="card-body">
+          <h3 class="text-center text-danger fw-bold mb-4 text-uppercase">Iniciar Sesión</h3>
+
+          <!-- Formulario -->
+          <form (ngSubmit)="onLogin()">
+            <div class="mb-3">
+              <label for="usuario" class="form-label fw-bold">Usuario</label>
+              <input
+                type="text"
+                id="usuario"
+                [(ngModel)]="usuario"
+                name="usuario"
+                class="form-control"
+                required
+                placeholder="Ingresa tu usuario"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label fw-bold">Contraseña</label>
+              <input
+                type="password"
+                id="password"
+                [(ngModel)]="password"
+                name="password"
+                class="form-control"
+                required
+                placeholder="Ingresa tu contraseña"
+              />
+            </div>
+
+            <!-- Alerta de error si las credenciales fallan -->
+            @if (mensajeError) {
+              <div class="alert alert-danger py-2 text-center" role="alert">
+                {{ mensajeError }}
+              </div>
+            }
+
+            <button type="submit" class="btn btn-danger w-100 fw-bold rounded-pill mt-3">
+              Entrar
+            </button>
+          </form>
+          <div class="text-center mt-3">
+            <small class="text-light"
+              >¿No tienes cuenta?
+              <a routerLink="/registro" class="text-danger text-decoration-none fw-bold"
+                >Regístrate aquí</a>
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

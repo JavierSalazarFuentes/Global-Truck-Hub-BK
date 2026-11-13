@@ -1,0 +1,26 @@
+{
+  "catalogo": [
+    {
+      "titulo": "Kenworth",
+      "listado": [
+        { "nombre": "kenworth T680 Net Gen", "imagen": "recursos/T680.png", "precio": 350000000 },
+        { "nombre": "Kenworth T880", "imagen": "recursos/T880.png", "precio": 380000000 },
+        { "nombre": "kenworth T680", "imagen": "recursos/T680Normal.png", "precio": 320000000 },
+        { "nombre": "Kenworth W900", "imagen": "recursos/W900.png", "precio": 340000000 },
+        { "nombre": "Kenworth T660", "imagen": "recursos/T660.png", "precio": 310000000 },
+        { "nombre": "Kenworth T800", "imagen": "recursos/T800.png", "precio": 330000000 }
+      ]
+    },
+    {
+      "titulo": "International",
+      "listado": [
+        { "nombre": "international LT", "imagen": "recursos/LT.png", "precio": 210000000 },
+        { "nombre": "international HV", "imagen": "recursos/HV.png", "precio": 290000000 },
+        { "nombre": "international RH", "imagen": "recursos/RH.png", "precio": 280000000 },
+        { "nombre": "international HX", "imagen": "recursos/HX.png", "precio": 450000000 },
+        { "nombre": "international MV", "imagen": "recursos/MV.png", "precio": 230000000 },
+        { "nombre": "international EMV", "imagen": "recursos/EMV.png", "precio": 310000000 }
+      ]
+    }
+  ]
+}

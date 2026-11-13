@@ -1,0 +1,64 @@
+<div class="ficha-container table-responsive p-4 shadow-lg">
+
+  <table class="table table-dark table-hover mb-0">
+
+    <thead>
+      <tr>
+        <th
+          colspan="2"
+          class="text-danger text-uppercase py-3 border-bottom border-danger">
+
+          Especificaciones Técnicas - Kenworth T680
+
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr>
+        <td class="fw-bold text-secondary">Motor</td>
+        <td>PACCAR MX-13 / Cummins X15</td>
+      </tr>
+
+      <tr>
+        <td class="fw-bold text-secondary">Transmisión</td>
+        <td>Automatizada PACCAR de 12 velocidades</td>
+      </tr>
+
+      <tr>
+        <td class="fw-bold text-secondary">Potencia</td>
+        <td>405 - 510 HP</td>
+      </tr>
+
+      <tr>
+        <td class="fw-bold text-secondary">Torque</td>
+        <td>1,450 - 1,850 lb-ft</td>
+      </tr>
+
+      <tr>
+        <td class="fw-bold text-secondary">Ejes</td>
+        <td>Dana Spicer / Meritor</td>
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>
+
+<h2 class="text-uppercase mt-4">
+  Ficha Técnica: {{ modeloCamion }}
+</h2>
+
+<div class="mt-4 d-print-none text-center">
+
+  <button
+    (click)="imprimirCotizacion()"
+    class="btn btn-danger btn-lg rounded-pill shadow">
+
+    Imprimir o Guardar como PDF
+
+  </button>
+
+</div>

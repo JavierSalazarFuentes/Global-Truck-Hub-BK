@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow">
+  <div class="container-fluid">
+    <app-logo></app-logo>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#menuPrincipal">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menuPrincipal">
+      <div class="navbar-nav ms-auto align-items-center">
+        <!-- Botones fijos de navegación -->
+        <app-nav-button link="/home" texto="INICIO"></app-nav-button>
+        <app-nav-button link="/catalogo" texto="CATÁLOGO"></app-nav-button>
+        <app-nav-button link="/cotizacion" texto="COTIZACIÓN"></app-nav-button>
+        <app-nav-button link="/contacto" texto="CONTACTO"></app-nav-button>
+
+        <!-- CONDICIONAL: Si NO hay sesión iniciada, muestra tu componente nav-button de login -->
+        <ng-container *ngIf="!usuarioActual; else userLoggedIn">
+          <app-nav-button link="/login" texto="INICIAR SESIÓN"></app-nav-button>
+        </ng-container><!-- CONDICIONAL: Si YA inició sesión, oculta el botón de login y muestra el nombre/perfil -->
+        <ng-template #userLoggedIn>
+          <div class="dropdown ms-lg-3">
+            <!-- Aplicamos las mismas clases de estilo de los botones de navegación -->
+            <button
+              class="btn btn-outline-light border-0 fw-bold px-3 py-2 mx-1 rounded-pill custom-nav-link dropdown-toggle d-inline-flex align-items-center gap-2"
+              type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-person-circle"></i>
+              <span>{{ usuarioActual.nombre || usuarioActual.usuario || 'PERFIL' }}</span>
+            </button>
+
+            <ul class="dropdown-menu dropdown-menu-end bg-dark navbar-dark border-secondary shadow">
+              <li><a class="dropdown-item text-light" routerLink="/perfil">Mi Perfil</a></li>
+              <li>
+                <hr class="dropdown-divider border-secondary">
+              </li>
+              <li><button class="dropdown-item text-danger" (click)="cerrarSesion()">Cerrar Sesión</button></li>
+            </ul>
+          </div>
+        </ng-template>
+
+        </div>
+        </div>
+  </div>
+</nav>
