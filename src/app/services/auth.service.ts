@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,34 +10,44 @@ export class AuthService {
   private apiUrl = `${this.baseUrl}/login`;
   private registroUrl = `${this.baseUrl}/registro`;
 
-  // BehaviorSubject usa ahora el método seguro con sessionStorage
+  // BehaviorSubject usa el método seguro optimizado
   private currentUserSubject = new BehaviorSubject<any>(this.obtenerUsuarioDeStorage());
   public currentUser$ = this.currentUserSubject.asObservable();
 
   constructor(private http: HttpClient) {}
 
-  // Método seguro que valida y limpia datos corruptos o incompletos del sessionStorage
+  // 🔍 CORRECCIÓN: Validamos que exista tanto el usuario como el token,
+  // y que el token tenga el formato correcto de un JWT (3 partes separadas por puntos).
   private obtenerUsuarioDeStorage() {
     const guardado = sessionStorage.getItem('usuario');
+    const token = sessionStorage.getItem('token');
 
-    if (!guardado || guardado === 'undefined' || guardado === 'null') {
+    if (!guardado || guardado === 'undefined' || guardado === 'null' || !token) {
+      sessionStorage.removeItem('usuario');
+      sessionStorage.removeItem('token');
       return null;
     }
 
     try {
+      // Verificamos estructura básica del JWT (header.payload.signature)
+      const partesToken = token.split('.');
+      if (partesToken.length !== 3) {
+        sessionStorage.removeItem('usuario');
+        sessionStorage.removeItem('token');
+        return null;
+      }
+
       const usuario = JSON.parse(guardado);
 
       // Validamos que sea un objeto real y tenga propiedades válidas
       if (usuario && typeof usuario === 'object' && (usuario.nombre || usuario.usuario)) {
         return usuario;
       } else {
-        // Si está incompleto, limpiamos la basura del sessionStorage inmediatamente
         sessionStorage.removeItem('usuario');
         sessionStorage.removeItem('token');
         return null;
       }
     } catch (e) {
-      // Si el JSON está dañado, también limpiamos todo
       sessionStorage.removeItem('usuario');
       sessionStorage.removeItem('token');
       return null;
