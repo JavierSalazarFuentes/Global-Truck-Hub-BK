@@ -4,15 +4,15 @@ import { Observable } from 'rxjs';
 // Servicio para manejar las operaciones relacionadas con el catálogo
 @Injectable({
   // Inyecta HttpClient para realizar solicitudes HTTP
-  providedIn: 'root'
+  providedIn: 'root',
 })
 // Servicio para manejar las operaciones relacionadas con el catálogo
 export class CatalogoService {
   // URL de la API donde se maneja el catálogo
-  private apiUrl = 'http://localhost:3000/api/catalogo';
+  private apiUrl = 'https://centro-global-camiones.onrender.com/api/catalogo';
 
   constructor(private http: HttpClient) {}
-// Método para obtener el catálogo, devuelve un Observable con la respuesta
+  // Método para obtener el catálogo, devuelve un Observable con la respuesta
   getCatalogo(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
